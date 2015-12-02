@@ -94,7 +94,9 @@ process	shell (
 		SHELL_BAN5,SHELL_BAN6,SHELL_BAN7,SHELL_BAN8,SHELL_BAN9);
 
 	fprintf(dev, "%s\n\n", SHELL_STRTMSG);
-    fprintf( dev, "Modified by Joe Teague with a Best-Fit Memory Manager.\n\n" );
+    fprintf( dev, "Modified by Joe Teague with:\n" );
+    fprintf( dev, "Best-Fit Memory Manager.\n" );
+    fprintf( dev, "Read-Write Blocker\n\n" );
 	/* Continually prompt the user, read input, and execute command	*/
 
 	while (TRUE) {

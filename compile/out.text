@@ -1,0 +1,54 @@
+making the config program
+make[1]: Entering directory `/home/jteague6/cs494/xinu-rwb/config'
+rm -f config lex.yy.c y.tab.c
+/usr/bin/flex config.l
+/usr/bin/bison -y	 config.y
+/usr/bin/gcc  -o config y.tab.c -lfl
+./config Configuration conf.c conf.h
+cp -p conf.h ../include
+cp -p conf.c ../system
+make[1]: Leaving directory `/home/jteague6/cs494/xinu-rwb/config'
+making ../system/conf.c
+make[1]: Entering directory `/home/jteague6/cs494/xinu-rwb/compile'
+forcing a rebuild of conf.h and conf.c
+make[2]: Entering directory `/home/jteague6/cs494/xinu-rwb/compile'
+creating new version
+make[2]: Leaving directory `/home/jteague6/cs494/xinu-rwb/compile'
+make[2]: Entering directory `/home/jteague6/cs494/xinu-rwb/config'
+cp -p conf.h ../include
+cp -p conf.c ../system
+make[2]: Leaving directory `/home/jteague6/cs494/xinu-rwb/config'
+make[1]: Leaving directory `/home/jteague6/cs494/xinu-rwb/compile'
+Rebuilding the .defs file
+../cross_compiler/bin/arm-none-eabi-gcc -mcpu=cortex-a8 -mno-unaligned-access -marm -fno-builtin -fno-stack-protector -nostdlib -c -Wall -O -DBSDURG -DVERSION=\""`cat version`"\" -I../include -o binaries/start.o ../system/start.S
+../cross_compiler/bin/arm-none-eabi-gcc -mcpu=cortex-a8 -mno-unaligned-access -marm -fno-builtin -fno-stack-protector -nostdlib -c -Wall -O -DBSDURG -DVERSION=\""`cat version`"\" -I../include -o binaries/ascdate.o ../system/ascdate.c
+../cross_compiler/bin/arm-none-eabi-gcc -mcpu=cortex-a8 -mno-unaligned-access -marm -fno-builtin -fno-stack-protector -nostdlib -c -Wall -O -DBSDURG -DVERSION=\""`cat version`"\" -I../include -o binaries/bufinit.o ../system/bufinit.c
+../cross_compiler/bin/arm-none-eabi-gcc -mcpu=cortex-a8 -mno-unaligned-access -marm -fno-builtin -fno-stack-protector -nostdlib -c -Wall -O -DBSDURG -DVERSION=\""`cat version`"\" -I../include -o binaries/chprio.o ../system/chprio.c
+../cross_compiler/bin/arm-none-eabi-gcc -mcpu=cortex-a8 -mno-unaligned-access -marm -fno-builtin -fno-stack-protector -nostdlib -c -Wall -O -DBSDURG -DVERSION=\""`cat version`"\" -I../include -o binaries/clkhandler.o ../system/clkhandler.c
+../cross_compiler/bin/arm-none-eabi-gcc -mcpu=cortex-a8 -mno-unaligned-access -marm -fno-builtin -fno-stack-protector -nostdlib -c -Wall -O -DBSDURG -DVERSION=\""`cat version`"\" -I../include -o binaries/clkinit.o ../system/clkinit.c
+../cross_compiler/bin/arm-none-eabi-gcc -mcpu=cortex-a8 -mno-unaligned-access -marm -fno-builtin -fno-stack-protector -nostdlib -c -Wall -O -DBSDURG -DVERSION=\""`cat version`"\" -I../include -o binaries/close.o ../system/close.c
+../cross_compiler/bin/arm-none-eabi-gcc -mcpu=cortex-a8 -mno-unaligned-access -marm -fno-builtin -fno-stack-protector -nostdlib -c -Wall -O -DBSDURG -DVERSION=\""`cat version`"\" -I../include -o binaries/conf.o ../system/conf.c
+../cross_compiler/bin/arm-none-eabi-gcc -mcpu=cortex-a8 -mno-unaligned-access -marm -fno-builtin -fno-stack-protector -nostdlib -c -Wall -O -DBSDURG -DVERSION=\""`cat version`"\" -I../include -o binaries/control.o ../system/control.c
+../cross_compiler/bin/arm-none-eabi-gcc -mcpu=cortex-a8 -mno-unaligned-access -marm -fno-builtin -fno-stack-protector -nostdlib -c -Wall -O -DBSDURG -DVERSION=\""`cat version`"\" -I../include -o binaries/create.o ../system/create.c
+../cross_compiler/bin/arm-none-eabi-gcc -mcpu=cortex-a8 -mno-unaligned-access -marm -fno-builtin -fno-stack-protector -nostdlib -c -Wall -O -DBSDURG -DVERSION=\""`cat version`"\" -I../include -o binaries/evec.o ../system/evec.c
+../cross_compiler/bin/arm-none-eabi-gcc -mcpu=cortex-a8 -mno-unaligned-access -marm -fno-builtin -fno-stack-protector -nostdlib -c -Wall -O -DBSDURG -DVERSION=\""`cat version`"\" -I../include -o binaries/exit.o ../system/exit.c
+../cross_compiler/bin/arm-none-eabi-gcc -mcpu=cortex-a8 -mno-unaligned-access -marm -fno-builtin -fno-stack-protector -nostdlib -c -Wall -O -DBSDURG -DVERSION=\""`cat version`"\" -I../include -o binaries/freebuf.o ../system/freebuf.c
+../cross_compiler/bin/arm-none-eabi-gcc -mcpu=cortex-a8 -mno-unaligned-access -marm -fno-builtin -fno-stack-protector -nostdlib -c -Wall -O -DBSDURG -DVERSION=\""`cat version`"\" -I../include -o binaries/freemem.o ../system/freemem.c
+../cross_compiler/bin/arm-none-eabi-gcc -mcpu=cortex-a8 -mno-unaligned-access -marm -fno-builtin -fno-stack-protector -nostdlib -c -Wall -O -DBSDURG -DVERSION=\""`cat version`"\" -I../include -o binaries/freestk.o ../system/freestk.c
+../cross_compiler/bin/arm-none-eabi-gcc -mcpu=cortex-a8 -mno-unaligned-access -marm -fno-builtin -fno-stack-protector -nostdlib -c -Wall -O -DBSDURG -DVERSION=\""`cat version`"\" -I../include -o binaries/getbuf.o ../system/getbuf.c
+../cross_compiler/bin/arm-none-eabi-gcc -mcpu=cortex-a8 -mno-unaligned-access -marm -fno-builtin -fno-stack-protector -nostdlib -c -Wall -O -DBSDURG -DVERSION=\""`cat version`"\" -I../include -o binaries/getc.o ../system/getc.c
+../cross_compiler/bin/arm-none-eabi-gcc -mcpu=cortex-a8 -mno-unaligned-access -marm -fno-builtin -fno-stack-protector -nostdlib -c -Wall -O -DBSDURG -DVERSION=\""`cat version`"\" -I../include -o binaries/getdev.o ../system/getdev.c
+../cross_compiler/bin/arm-none-eabi-gcc -mcpu=cortex-a8 -mno-unaligned-access -marm -fno-builtin -fno-stack-protector -nostdlib -c -Wall -O -DBSDURG -DVERSION=\""`cat version`"\" -I../include -o binaries/getitem.o ../system/getitem.c
+../cross_compiler/bin/arm-none-eabi-gcc -mcpu=cortex-a8 -mno-unaligned-access -marm -fno-builtin -fno-stack-protector -nostdlib -c -Wall -O -DBSDURG -DVERSION=\""`cat version`"\" -I../include -o binaries/getmem.o ../system/getmem.c
+../cross_compiler/bin/arm-none-eabi-gcc -mcpu=cortex-a8 -mno-unaligned-access -marm -fno-builtin -fno-stack-protector -nostdlib -c -Wall -O -DBSDURG -DVERSION=\""`cat version`"\" -I../include -o binaries/getpid.o ../system/getpid.c
+../cross_compiler/bin/arm-none-eabi-gcc -mcpu=cortex-a8 -mno-unaligned-access -marm -fno-builtin -fno-stack-protector -nostdlib -c -Wall -O -DBSDURG -DVERSION=\""`cat version`"\" -I../include -o binaries/getprio.o ../system/getprio.c
+../cross_compiler/bin/arm-none-eabi-gcc -mcpu=cortex-a8 -mno-unaligned-access -marm -fno-builtin -fno-stack-protector -nostdlib -c -Wall -O -DBSDURG -DVERSION=\""`cat version`"\" -I../include -o binaries/getstk.o ../system/getstk.c
+../cross_compiler/bin/arm-none-eabi-gcc -mcpu=cortex-a8 -mno-unaligned-access -marm -fno-builtin -fno-stack-protector -nostdlib -c -Wall -O -DBSDURG -DVERSION=\""`cat version`"\" -I../include -o binaries/gettime.o ../system/gettime.c
+../cross_compiler/bin/arm-none-eabi-gcc -mcpu=cortex-a8 -mno-unaligned-access -marm -fno-builtin -fno-stack-protector -nostdlib -c -Wall -O -DBSDURG -DVERSION=\""`cat version`"\" -I../include -o binaries/getutime.o ../system/getutime.c
+../cross_compiler/bin/arm-none-eabi-gcc -mcpu=cortex-a8 -mno-unaligned-access -marm -fno-builtin -fno-stack-protector -nostdlib -c -Wall -O -DBSDURG -DVERSION=\""`cat version`"\" -I../include -o binaries/init.o ../system/init.c
+../cross_compiler/bin/arm-none-eabi-gcc -mcpu=cortex-a8 -mno-unaligned-access -marm -fno-builtin -fno-stack-protector -nostdlib -c -Wall -O -DBSDURG -DVERSION=\""`cat version`"\" -I../include -o binaries/initialize.o ../system/initialize.c
+../cross_compiler/bin/arm-none-eabi-gcc -mcpu=cortex-a8 -mno-unaligned-access -marm -fno-builtin -fno-stack-protector -nostdlib -c -Wall -O -DBSDURG -DVERSION=\""`cat version`"\" -I../include -o binaries/insert.o ../system/insert.c
+../cross_compiler/bin/arm-none-eabi-gcc -mcpu=cortex-a8 -mno-unaligned-access -marm -fno-builtin -fno-stack-protector -nostdlib -c -Wall -O -DBSDURG -DVERSION=\""`cat version`"\" -I../include -o binaries/insertd.o ../system/insertd.c
+../cross_compiler/bin/arm-none-eabi-gcc -mcpu=cortex-a8 -mno-unaligned-access -marm -fno-builtin -fno-stack-protector -nostdlib -c -Wall -O -DBSDURG -DVERSION=\""`cat version`"\" -I../include -o binaries/ioerr.o ../system/ioerr.c
+../cross_compiler/bin/arm-none-eabi-gcc -mcpu=cortex-a8 -mno-unaligned-access -marm -fno-builtin -fno-stack-protector -nostdlib -c -Wall -O -DBSDURG -DVERSION=\""`cat version`"\" -I../include -o binaries/ionull.o ../system/ionull.c
+../cross_compiler/bin/arm-none-eabi-gcc -mcpu=cortex-a8 -mno-unaligned-access -marm -fno-builtin -fno-stack-protector -nostdlib -c -Wall -O -DBSDURG -DVERSION=\""`cat version`"\" -I../include -o binaries/jttrwb.o ../system/jttrwb.c
